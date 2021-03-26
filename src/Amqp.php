@@ -108,7 +108,8 @@ class Amqp
             ->setup();
 
         $consumer->consume($queue, $callback);
-        Request::shutdown($consumer->getChannel(), $consumer->getConnection());
+        Request::shutdown($consumer->getChannel(), $consumer->getConnection());;
+	return $consumer;
     }
 
     /**
